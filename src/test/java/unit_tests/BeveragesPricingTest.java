@@ -19,50 +19,50 @@ public class BeveragesPricingTest {
 
     @Test
     public void computes_coffee_price() {
-        Priceable coffee = BeverageMachine.coffee().make();
+        Priceable coffee = PriceableFactory.coffee().make();
         assertThat(coffee.price(), is(closeTo(REGULAR_COFFE_PRICE, 0.001)));
     }
 
     @Test
     public void computes_tea_price() {
-        Priceable tea = BeverageMachine.tea().make();
+        Priceable tea = PriceableFactory.tea().make();
         assertThat(tea.price(), is(closeTo(REGULAR_TEA_PRICE, 0.001)));
     }
 
     @Test
     public void computes_hot_chocolate_price() {
-        Priceable hotChocolate = BeverageMachine.hotChocolate().make();
+        Priceable hotChocolate = PriceableFactory.hotChocolate().make();
         assertThat(hotChocolate.price(), is(closeTo(HOT_CHOCOLATE_REGULAR_PRICE, 0.001)));
     }
 
     @Test
     public void computes_tea_with_milk_price() {
-        Priceable teaWithMilk = BeverageMachine.tea().withMilk().make();
+        Priceable teaWithMilk = PriceableFactory.tea().withMilk().make();
         assertThat(teaWithMilk.price(), is(closeTo(1.60, 0.001)));
     }
 
     @Test
     public void computes_coffee_with_milk_price() {
-        Priceable coffeeWithMilk = BeverageMachine.coffee().withMilk().make();
+        Priceable coffeeWithMilk = PriceableFactory.coffee().withMilk().make();
         assertThat(coffeeWithMilk.price(), is(closeTo(1.30, 0.001)));
     }
 
     @Test
     public void computes_coffee_with_milk_and_cream_price() {
-        Priceable coffeeWithMilkAndCream = BeverageMachine.coffee().withMilk().withCream().make();
+        Priceable coffeeWithMilkAndCream = PriceableFactory.coffee().withMilk().withCream().make();
         assertThat(coffeeWithMilkAndCream.price(), is(closeTo(HOT_CHOCOLATE_REGULAR_PRICE, 0.001)));
     }
 
     @Test
     public void computes_hot_chocolate_with_cream_price() {
-        Priceable hotChocolateWithCream = BeverageMachine.hotChocolate().withCream().make();
+        Priceable hotChocolateWithCream = PriceableFactory.hotChocolate().withCream().make();
         assertThat(hotChocolateWithCream.price(), is(closeTo(1.60, 0.001)));
     }
 
     @Test
     public void computes_tea_with_cream_price()
     {
-        Priceable hotChocolateWithCream = BeverageMachine.tea().withCream().make();
+        Priceable hotChocolateWithCream = PriceableFactory.tea().withCream().make();
         assertThat(hotChocolateWithCream.price(), is(closeTo(1.65, 0.001)));
     }
 }

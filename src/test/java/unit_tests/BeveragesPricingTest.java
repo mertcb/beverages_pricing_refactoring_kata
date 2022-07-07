@@ -32,6 +32,7 @@ public class BeveragesPricingTest {
         assertThat(teaWithMilk.price(), is(closeTo(1.60, 0.001)));
     }
 
+
     @Test
     public void computes_coffee_with_milk_price() {
         Coffee coffeeWithMilk = new CoffeeWithMilk();
